@@ -1,0 +1,40 @@
+<div class="body">
+    <h1>REGISTER FORM</h1>
+    <h3>Welcome to our page!</h3>
+    <div>
+        <form [formGroup]="RegisterForm">
+            <div class="row">
+                <div class="col-3">
+                    <label for="fullName">Full Name</label>  
+                    <input type="text" class="form-control" formControlName="fullName" id="fullName" 
+                        placeholder="Enter your full name">                  
+                </div>
+                <div class="col-3">
+                <label for="username">User name</label>
+                <input type="text" class="form-control" formControlName="username" id="username"
+                    placeholder="Enter your user name">
+            </div>
+            <div class="col-3">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" formControlName="password" id="password"
+                    placeholder="Enter your password">
+            </div>
+            
+            <div class="col-3">
+                <label for="Phone">Phone Number</label>
+                <input type="text" class="form-control" formControlName="phone" id="phone"
+                    placeholder="Enter your phone no">
+            </div>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="admin" formControlName="role" class="custom-control-input" value="admin">
+                <label class="custom-control-label" for="admin">Admin</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customer" formControlName="role" class="custom-control-input" value="customer">
+                <label class="custom-control-label" for="customer">Customer</label>
+              </div>
+            <button class="btn btn-warning" (click)="Register()">Submit</button>
+        </form>
+    </div>
+    </div>

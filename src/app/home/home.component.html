@@ -1,0 +1,46 @@
+<div class="content">
+  <h2>Hi {{showData.unique_name}}</h2>
+  <div class="Logout">
+    <a href="#" (click)="Logout()">Logout</a>
+  </div>
+  <div class="flex-container">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">View Customer</h5>
+        <p class="card-text">View customer can be accessed by both admin/customer</p>
+        <button (click)="getCustomer()"class="btn btn-primary">View</button>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Add Customer</h5>
+        <p class="card-text">Customer can only be added to the list with admin privileges.</p>
+        <button (click)="addCustomer()" [disabled]="isDisabled" class="btn btn-primary">Add </button>
+      </div>
+    </div>
+  </div>
+  <div class="customer-list-content" *ngIf="showTable">
+    <h2>Customer List</h2>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef>Full Name</th>
+        <td mat-cell *matCellDef="let element">{{element.fullName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef>UserName</th>
+        <td mat-cell *matCellDef="let element">{{element.username}}</td>
+      </ng-container>
+      <ng-container matColumnDef="dateOfJoining">
+        <th mat-header-cell *matHeaderCellDef>DOJ</th>
+        <td mat-cell *matCellDef="let element">{{element.dateOfJoining}}</td>
+      </ng-container>
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef>Phone No.</th>
+        <td mat-cell *matCellDef="let element">{{element.phoneNumber}}</td>
+      </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row ; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="body">
+    <h2>Welcome to the login page</h2>
+    <h4>Hope you have a great session!!</h4>
+    <form [formGroup]="LoginForm">
+        <div class="row">
+            <div class="col-3">
+                <label for="username">User name </label>&nbsp;&nbsp;
+                <input type="text" id="username" formControlName="userName" placeholder="Enter your user name" required>
+            </div>
+            <div class="col-3">
+                <label for="password">Password</label>&nbsp;&nbsp;
+                <input type="text" id="password" formControlName="password" placeholder="Enter password" required>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-2">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="admin" formControlName="role" class="custom-control-input"
+                            value="admin">
+                        <label class="custom-control-label" for="admin">Admin</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customer" formControlName="role" class="custom-control-input"
+                            value="customer">
+                        <label class="custom-control-label" for="customer">Customer</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <h3>If you are a first time user! Register now!</h3>
+    <button class="btn btn-warning" (click)="Login()">Login</button>&nbsp;&nbsp;
+    <button class="btn btn-warning" (click)="OpenRegister()">Register</button>
+</div>

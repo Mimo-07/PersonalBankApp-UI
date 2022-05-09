@@ -1,0 +1,28 @@
+.content{
+    background-color: yellow;
+    .Logout{
+        padding-right: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .flex-container{
+
+        padding:100px;
+        height:400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        .card{
+            margin:10px;
+        }
+    }
+    .customer-list-content{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding:50px;
+        table{
+            width: 100%;
+        }
+    }
+}
